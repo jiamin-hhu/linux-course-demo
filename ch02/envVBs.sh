@@ -1,5 +1,7 @@
 #!/bin/bash
 
+pstree -p | head -n 1 ; pstree -p | grep $$
+
 #set VINEB and VINLB in /etc/bash.bashrc and ~/.bashrc, respectively
 echo $VINEB 
 echo $VINLB

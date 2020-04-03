@@ -4,6 +4,8 @@ bin=`dirname "$0"`
 bin=`cd "$bin"; pwd`
 
 B=FALSE
+FILEPATH=""
+P=BFALSE
 
 declare -i numOfArgs=$#
 let numOfArgs++
@@ -12,7 +14,7 @@ while [ $# -eq 0 -o $numOfArgs -ne $OPTIND ]; do
 
   #echo "OPTIND is $OPTIND"
 
-  getopts "ha:bc:" optKey
+  getopts "ha:bc:fF" optKey
   if [ "$optKey" == "?" ]; then
     optKey="h"
   fi
@@ -26,6 +28,8 @@ while [ $# -eq 0 -o $numOfArgs -ne $OPTIND ]; do
 	   echo -en " -a Define a variable named A. \n\n"
 	   echo -en " -b Set an option named B. \n\n"
 	   echo -en " -c Define a INT variable named C. \n\n"
+	   echo -en " -f Print the data File's path. \n\n"
+	   echo -en " -F Print the data file's physical path. \n\n"
 	   exit 0;;
 	a)
 		A="${OPTARG}"
@@ -42,6 +46,12 @@ while [ $# -eq 0 -o $numOfArgs -ne $OPTIND ]; do
 		  exit -1
 		fi
 		;;
+	f)
+		FILEPATH="$bin/data"
+		;;
+	F)
+		P=TRUE
+		;;
   esac
 done
 
@@ -55,4 +65,16 @@ fi
 
 if [ ! -z $C ]; then
   echo "Variable C is $C"
+fi
+
+if [ "$FILEPATH" != "" ]; then
+  echo "The data file's path is: $FILEPATH"
+fi 
+
+if [ "$P" == "TRUE" ]; then
+  Bin=`readlink -f "$0"`
+  Bin=`dirname "$Bin"`
+  Bin=`cd "$Bin"; pwd`
+  FILEPATH="$Bin/data"
+  echo "The data file's physical path is: $FILEPATH"
 fi

@@ -1,4 +1,5 @@
 #!/bin/bash
+#demo for redirect file to STDIN
 
 file=$1
 

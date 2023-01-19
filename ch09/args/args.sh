@@ -5,7 +5,7 @@ bin=`cd "$bin"; pwd`
 
 B=FALSE
 FILEPATH=""
-P=BFALSE
+P=FALSE
 
 declare -i numOfArgs=$#
 let numOfArgs++

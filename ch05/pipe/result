@@ -1,0 +1,12 @@
+Get a line: #include <iostream>
+Get a line: using namespace std;
+Get a line: 
+Get a line: int main(int argc, char** argv){
+Get a line:   string line;
+Get a line:   while (getline(cin,line)) {
+Get a line:     cout << "Get a line: " << line << endl;
+Get a line:   }
+Get a line: 
+Get a line:   cerr << "\nOops, it's the end ! " << endl;
+Get a line: }
+Get a line: 

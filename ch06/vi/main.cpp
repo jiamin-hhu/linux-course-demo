@@ -5,15 +5,10 @@ using namespace std;
 
 void print(int a, int b);
 
-int main(){
- 
-  int a , b; 
-  int c;
 
-  cout << "input a: ";
-  cin >> a;
-  cout << "input b: ";
-  cin >> b;
+int main(){
+  int a , b,d,e,0xff; 
+
 
 
   cout << "At first, ";
@@ -24,6 +19,10 @@ int main(){
   print(a, b);
 
 
+  cout << "input a: ";
+  cin >> a;
+  cout << "input b: ";
+  cin >> b;
   a= increaseBy(a, 5);
   cout << "After adding a by 5, ";
   print(a, b);

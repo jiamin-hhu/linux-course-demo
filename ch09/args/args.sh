@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "the \$0 is $0"
+
 bin=`dirname "$0"`
 bin=`cd "$bin"; pwd`
 
